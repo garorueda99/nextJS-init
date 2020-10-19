@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@magic-sdk/admin": "^1.2.2",
     "magic-sdk": "^2.7.0",
     "next": "9.5.5",
     "react": "16.14.0",
