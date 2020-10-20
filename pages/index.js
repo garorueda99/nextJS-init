@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
+import Login from '../components/login';
 
 export default function Home() {
   return (
@@ -13,14 +14,8 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>Caristrap Maintenance App</h1>
 
-        <p className={styles.description}>
-          Get started by{' '}
-          <code className={styles.code}>
-            <Link href='/login'>
-              <a>Login</a>
-            </Link>
-          </code>
-        </p>
+        <p className={styles.description}>Get started by</p>
+        <Login />
 
         <div className={styles.grid}></div>
       </main>
@@ -32,7 +27,7 @@ export default function Home() {
           rel='noopener noreferrer'
         >
           Powered by{' '}
-          <img src='/vercel.svg' alt='Vercel Logo' className={styles.logo} />
+          <img src='/cLogo.gif' alt='Vercel Logo' className={styles.logo} />
         </a>
       </footer>
     </div>

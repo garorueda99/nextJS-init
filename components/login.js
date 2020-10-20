@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { Magic } from 'magic-sdk';
 
+import styles from '../styles/Login.module.css';
 export default function Login() {
   const router = useRouter();
   const handleSubmit = async (event) => {
@@ -31,10 +32,14 @@ export default function Login() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor='email'>Email</label>
-      <input name='email' type='email' />
-      <button>Log in</button>
-    </form>
+    <div className={styles.container}>
+      <form onSubmit={handleSubmit} className={styles.card}>
+        <label htmlFor='email' div className={styles.description}>
+          Your Caristrap Email:{' '}
+        </label>
+        <input name='email' type='email' className={styles.email} />
+        <button className={styles.button}>Log in</button>
+      </form>
+    </div>
   );
 }
