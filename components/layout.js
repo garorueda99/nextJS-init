@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useContext } from 'react';
-import { LoggedInContext, MagicContext } from './Store';
+// import { LoggedInContext, MagicContext } from './Store';
 import Link from 'next/link';
 import styles from '../styles/Layout.module.css';
 
