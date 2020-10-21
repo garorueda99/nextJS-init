@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import Link from 'next/link';
 import Login from '../components/login';
 
 export default function Home() {
@@ -12,7 +11,7 @@ export default function Home() {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-          if (document.cookie && document.cookie.includes('authed')) {
+          if (document.cookie && document.cookie.includes('authed_app')) {
             window.location.href = "/dashboard"
           }
         `,

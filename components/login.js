@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { Magic } from 'magic-sdk';
-
 import styles from '../styles/Login.module.css';
+
 export default function Login() {
   const router = useRouter();
   const handleSubmit = async (event) => {

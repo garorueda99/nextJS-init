@@ -1,0 +1,21 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 70px;
+  background-color: #15181b;
+  margin-bottom: 100px;
+}
+
+.nav_logo {
+  height: 35px;
+  margin: 17px 0px 10px 20px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.nav_user {
+  margin: 28px 10px 0 10px;
+  color: rgb(231, 231, 231);
+  font-size: 14px;
+}

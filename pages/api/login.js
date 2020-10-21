@@ -2,7 +2,7 @@ import { Magic } from '@magic-sdk/admin';
 import Iron from '@hapi/iron';
 import CookieService from '../../lib/cookie';
 
-console.log('====>', CookieService);
+// console.log('====>', CookieService);
 
 export default async (req, res) => {
   if (req.method !== 'POST') return res.status(405).end();
