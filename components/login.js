@@ -13,10 +13,9 @@ export default function Login() {
     const did = await new Magic(
       process.env.NEXT_PUBLIC_MAGIC_PUB_KEY
     ).auth.loginWithMagicLink({ email: elements.email.value });
-
     // Once we have the token from magic,
     // update our own database
-
+    // console.log('FRONT-DID', did);
     const authRequest = await fetch('/api/login', {
       method: 'POST',
       headers: { Authorization: `Bearer ${did}` },
@@ -34,7 +33,7 @@ export default function Login() {
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit} className={styles.card}>
-        <label htmlFor='email' div className={styles.description}>
+        <label htmlFor='email' className={styles.description}>
           Your Caristrap Email:{' '}
         </label>
         <input name='email' type='email' className={styles.email} />

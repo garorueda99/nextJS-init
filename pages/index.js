@@ -9,6 +9,15 @@ export default function Home() {
       <Head>
         <title>CM-App</title>
         <link rel='icon' href='/favicon.ico' />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          if (document.cookie && document.cookie.includes('authed')) {
+            window.location.href = "/dashboard"
+          }
+        `,
+          }}
+        />
       </Head>
 
       <main className={styles.main}>
