@@ -2,7 +2,7 @@ import Layout from '../components/layout';
 export default () => {
   return (
     <div>
-      <Layout>MACHINES</Layout>
+      <Layout>Account</Layout>
     </div>
   );
 };

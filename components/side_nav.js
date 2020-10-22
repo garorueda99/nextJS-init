@@ -4,7 +4,6 @@ import Link from 'next/link';
 export default function side_bar() {
   return (
     <div className={styles.wrapper}>
-      SIDE BAR
       <ul>
         <li>
           <Link href='/main'>
@@ -12,8 +11,23 @@ export default function side_bar() {
           </Link>
         </li>
         <li>
+          <Link href='/dashboard'>
+            <a>Dashboard</a>
+          </Link>
+        </li>
+        <li>
+          <Link href='/todos'>
+            <a>To-dos</a>
+          </Link>
+        </li>
+        <li>
           <Link href='/machines'>
             <a>Machines</a>
+          </Link>
+        </li>
+        <li>
+          <Link href='/account'>
+            <a>Account</a>
           </Link>
         </li>
       </ul>
