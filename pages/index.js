@@ -3,6 +3,8 @@ import styles from '../styles/Home.module.css';
 import Login from '../components/login';
 
 export default function Home() {
+  const [state, setState] = React.useState('Test');
+  console.log(state);
   return (
     <div className={styles.container}>
       <Head>
