@@ -2,4 +2,24 @@
   width: 250px;
   height: 100%;
   background-color: var(--card-color-background);
+  font-size: 1.4rem;
+  padding: 10px 5px;
+}
+
+.list {
+  list-style-type: none;
+}
+
+.list li {
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.list li > a {
+  line-height: 1.4rem;
+}
+
+.icons {
+  margin-right: 6px;
 }
