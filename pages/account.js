@@ -1,8 +1,8 @@
 import Layout from '../components/layout';
-export default () => {
+export default function account() {
   return (
     <div>
       <Layout>Account</Layout>
     </div>
   );
-};
+}

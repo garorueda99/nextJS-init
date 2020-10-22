@@ -1,8 +1,8 @@
 import Layout from '../components/layout';
-export default () => {
+export default function todos() {
   return (
     <div>
       <Layout>To-dos</Layout>
     </div>
   );
-};
+}
