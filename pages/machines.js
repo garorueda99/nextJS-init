@@ -1,3 +1,8 @@
+import Layout from '../components/layout';
 export default function machines() {
-  return <div>MACHINES</div>;
+  return (
+    <div>
+      <Layout>MACHINES</Layout>
+    </div>
+  );
 }
