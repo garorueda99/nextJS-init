@@ -3,8 +3,10 @@ import { useContext } from 'react';
 import { LoggedInContext, MagicContext } from './store';
 import Link from 'next/link';
 import styles from '../styles/Layout.module.css';
+import MainNav from './main_nav';
+import SideNav from './side_nav';
 
-const Layout = () => {
+const Layout = (props) => {
   // const [loggedIn, setLoggedIn] = useContext(LoggedInContext);
   // const [magic] = useContext(MagicContext);
 
@@ -21,14 +23,13 @@ const Layout = () => {
   // };
 
   return (
-    <>
+    <div className={styles.wrapper}>
       <Head>
         <title>CM-App</title>
       </Head>
-      <nav className={styles.nav}>
-        <div>
-          <img src='/cLogo.gif' className={styles.nav_logo} alt='Logo' />
-        </div>
+      <MainNav />
+      <div className={styles.horizontal_area}>
+        <SideNav />
         {/* If a user is logged in, show our Welcome message and Logout button */}
         {/* {loggedIn ? (
           <>
@@ -54,8 +55,9 @@ const Layout = () => {
             </Link>
           </>
         )} */}
-      </nav>
-    </>
+        {props.children}
+      </div>
+    </div>
   );
 };
 

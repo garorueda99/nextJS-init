@@ -24,7 +24,7 @@ export default function Login() {
       // We successfully logged in, our API
       // set authorization cookies and now we
       // can redirect to the dashboard!
-      router.push('/dashboard');
+      router.push('/main');
     } else {
       /* handle errors */
     }

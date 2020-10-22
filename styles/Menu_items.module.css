@@ -1,0 +1,19 @@
+.mobile {
+  display: none;
+}
+
+.desktop {
+  display: flex;
+  justify-content: space-between;
+  min-width: 90px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: flex;
+  }
+}

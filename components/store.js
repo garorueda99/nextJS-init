@@ -41,8 +41,11 @@ const Store = ({ children }) => {
     <LoggedInContext.Provider value={[loggedIn, setLoggedIn]}>
       <MagicContext.Provider value={[magic]}>
         <LoadingContext.Provider value={[isLoading, setIsLoading]}>
-          <Layout />
-          {children}
+          <div>
+            TEST
+            {/* <Layout /> */}
+            {children}
+          </div>
         </LoadingContext.Provider>
       </MagicContext.Provider>
     </LoggedInContext.Provider>
