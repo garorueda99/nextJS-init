@@ -1,10 +1,20 @@
 import Iron from '@hapi/iron';
-import CookieService from '../../lib/cookie';
+import CookieService from '../../../lib/cookie';
+
+/**
+ * This route checks if a user is autheticated
+ */
 
 export default async (req, res) => {
-  let user;
+  if (req.method !== 'GET') {
+    return res
+      .status(405)
+      .json({ message: 'This route only accepts GET requests' });
+  }
+
+  let userFromCookie;
   try {
-    user = await Iron.unseal(
+    userFromCookie = await Iron.unseal(
       CookieService.getAuthToken(req.cookies),
       process.env.ENCRYPTION_SECRET,
       Iron.defaults
@@ -17,5 +27,5 @@ export default async (req, res) => {
   // and we could make database calls or just send back what we have
   // in the token.
   //   console.log('HERE USER ===>', user);
-  res.json(user);
+  res.json(userFromCookie);
 };

@@ -1,14 +1,12 @@
 import Head from 'next/head';
 import { useContext } from 'react';
-import { LoggedInContext, MagicContext } from './store';
-import Link from 'next/link';
+import { LoggedInContext } from './store';
 import styles from '../styles/Layout.module.css';
 import MainNav from './main_nav';
 import SideNav from './side_nav';
-
+import Login from './login';
 const Layout = (props) => {
-  // const [loggedIn, setLoggedIn] = useContext(LoggedInContext);
-  // const [magic] = useContext(MagicContext);
+  const [loggedIn, setLoggedIn] = useContext(LoggedInContext);
 
   /**
    * Log user out of of the session with our app (clears the `auth` cookie)
@@ -27,36 +25,23 @@ const Layout = (props) => {
       <Head>
         <title>CM-App</title>
       </Head>
-      <MainNav />
-      <div className={styles.horizontal_area}>
-        <SideNav />
-        {/* If a user is logged in, show our Welcome message and Logout button */}
-        {/* {loggedIn ? (
-          <>
-            <div className={styles.nav_user}>Welcome, {loggedIn}</div>
-            <div className='logout-btn'>
-              <a
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleLogout();
-                }}
-              >
-                Logout
-              </a>
-            </div>
-          </>
-        ) : (
-          // Else, show the Login button
-          <>
-            <Link href='/login'>
-              <div className='login-btn'>
-                <a>Log in</a>
-              </div>
-            </Link>
-          </>
-        )} */}
-        {props.children}
-      </div>
+
+      {/* If a user is logged in, show our Welcome message and Logout button */}
+      {loggedIn ? (
+        <>
+          {' '}
+          <MainNav />
+          <div className={styles.horizontal_area}>
+            <SideNav />
+            {props.children}
+          </div>
+        </>
+      ) : (
+        // Else, show the Login button
+        <>
+          <Login />
+        </>
+      )}
     </div>
   );
 };

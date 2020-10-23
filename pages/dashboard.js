@@ -1,8 +1,5 @@
-import Layout from '../components/layout';
+// import Store from '../components/store';
 export default function dashboard() {
-  return (
-    <div>
-      <Layout>DASHBOARD</Layout>
-    </div>
-  );
+  return <div>DASHBOARD</div>;
+  // <Store>DASHBOARD</Store>;
 }

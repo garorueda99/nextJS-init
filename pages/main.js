@@ -1,15 +1,15 @@
+// import Store from '../components/store';
 import useAuth from '../hooks/useAuth';
-import Layout from '../components/layout';
 
 export default function main() {
   const { user, loading } = useAuth();
-  console.log('===>', user, loading);
+  // console.log('===>', user, loading);
   return (
     <div>
-      <Layout>
-        <h1>Main</h1>
-        {loading || user === null ? 'Loading....' : <p>{user.email}</p>}
-      </Layout>
+      {/* <Store> */}
+      <h1>Main</h1>
+      {loading || user === null ? 'Loading....' : <p>{user.email}</p>}
+      {/* </Store> */}
     </div>
   );
 }

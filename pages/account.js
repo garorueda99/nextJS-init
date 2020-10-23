@@ -1,8 +1,6 @@
-import Layout from '../components/layout';
+// import Store from '../components/store';
+
 export default function account() {
-  return (
-    <div>
-      <Layout>Account</Layout>
-    </div>
-  );
+  return <div>Account</div>;
+  // <Store>Account</Store>;
 }

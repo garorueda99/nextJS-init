@@ -1,11 +1,15 @@
 import { Magic } from '@magic-sdk/admin';
 import Iron from '@hapi/iron';
-import CookieService from '../../lib/cookie';
+import CookieService from '../../../lib/cookie';
 
 // console.log('====>', CookieService);
 
 export default async (req, res) => {
-  if (req.method !== 'POST') return res.status(405).end();
+  if (req.method !== 'POST') {
+    return res
+      .status(405)
+      .json({ message: 'This route only accepts POST requests' });
+  }
 
   // exchange the did from Magic for some user data
   const did = req.headers.authorization.split('Bearer').pop().trim();
@@ -14,15 +18,13 @@ export default async (req, res) => {
   ).users.getMetadataByToken(did);
 
   // Author a couple of cookies to persist a user's session
-  const token = await Iron.seal(
+  const encrypted_token = await Iron.seal(
     user,
     process.env.ENCRYPTION_SECRET,
     Iron.defaults
   );
 
-  // console.log(res);
-
-  CookieService.setTokenCookie(res, token);
+  CookieService.setTokenCookie(res, encrypted_token);
 
   res.end();
 };

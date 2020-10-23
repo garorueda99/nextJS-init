@@ -1,8 +1,6 @@
-import Layout from '../components/layout';
+// import Store from '../components/store';
+
 export default function todos() {
-  return (
-    <div>
-      <Layout>To-dos</Layout>
-    </div>
-  );
+  return <div>To-dos</div>;
+  // <Store>To-dos</Store>;
 }

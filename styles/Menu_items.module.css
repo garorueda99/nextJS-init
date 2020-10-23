@@ -8,6 +8,11 @@
   min-width: 90px;
 }
 
+.iconButton {
+  background-color: transparent;
+  border: none;
+}
+
 @media only screen and (max-width: 1024px) {
   .desktop {
     display: none;

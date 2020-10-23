@@ -1,8 +1,5 @@
-import Layout from '../components/layout';
+// import Store from '../components/store';
 export default function machines() {
-  return (
-    <div>
-      <Layout>MACHINES</Layout>
-    </div>
-  );
+  return <div>MACHINERY</div>;
+  // <Store>MACHINES</Store>;
 }
