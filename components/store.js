@@ -10,8 +10,8 @@ export const LoadingContext = createContext();
 
 /* this function wraps our entire app within our context APIs so they all have access to their values */
 const Store = ({ children }) => {
-  const [user, setUser] = useState('garo99@gmail.com');
-  // const [user, setUser] = useState(null);
+  // const [user, setUser] = useState('garo99@gmail.com');
+  const [user, setUser] = useState(null);
   // const [isLoading, setIsLoading] = useState(true);
   const [magic, setMagic] = useState();
   useEffect(() => {

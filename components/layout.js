@@ -6,7 +6,7 @@ import MainNav from './main_nav';
 import SideNav from './side_nav';
 import Login from './login';
 
-const Layout = (props) => {
+const Layout = ({ children }) => {
   const [user, setUser] = useContext(UserContext);
 
   /**
@@ -31,7 +31,7 @@ const Layout = (props) => {
           <MainNav />
           <div className={styles.horizontal_area}>
             <SideNav />
-            {props.children}
+            {children}
           </div>
         </div>
       ) : (
