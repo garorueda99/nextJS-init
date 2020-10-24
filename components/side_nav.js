@@ -31,8 +31,8 @@ export default function side_bar() {
         </li>
         <li>
           <GiFactory className={styles.icons} />
-          <Link href='/machines'>
-            <a>Machines</a>
+          <Link href='/assets'>
+            <a>Assets</a>
           </Link>
         </li>
         <li>
