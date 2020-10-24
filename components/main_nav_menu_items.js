@@ -21,7 +21,7 @@ export default function menu_items() {
     <>
       <div className={styles.desktop}>
         <button className={styles.iconButton}>
-          <AiOutlineAlert size={35} color='white' />
+          <AiOutlineAlert size={30} color='white' />
         </button>
         <button
           className={styles.iconButton}
@@ -30,7 +30,7 @@ export default function menu_items() {
             handleLogout();
           }}
         >
-          <BiExit size={35} color='white' />
+          <BiExit size={30} color='white' />
         </button>
       </div>
       <AiOutlineMenu size={35} color='white' className={styles.mobile} />
