@@ -3,5 +3,5 @@
   flex-direction: column;
   align-items: center;
   padding-bottom: 15px;
-  border-bottom: 1px solid var(--primary-color-background);
+  border-bottom: 1px dotted var(--primary-border);
 }

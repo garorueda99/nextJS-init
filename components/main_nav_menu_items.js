@@ -20,7 +20,9 @@ export default function menu_items() {
   return (
     <>
       <div className={styles.desktop}>
-        <AiOutlineAlert size={35} color='white' />
+        <button className={styles.iconButton}>
+          <AiOutlineAlert size={35} color='white' />
+        </button>
         <button
           className={styles.iconButton}
           onClick={(e) => {
