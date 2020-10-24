@@ -1,43 +1,30 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import Login from '../components/login';
+import Store from '../components/store';
 
 export default function index() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>CM-App</title>
-        <link rel='icon' href='/favicon.ico' />
-        {/* <script
-          dangerouslySetInnerHTML={{
-            __html: `
-          if (document.cookie && document.cookie.includes('authed_app')) {
-            window.location.href = "/main"
-          }
-        `,
-          }}
-        /> */}
-      </Head>
+    <Store>
+      <div className={styles.container}>
+        <Head></Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>Caristrap Maintenance App</h1>
+        <main className={styles.main}>THE INDEX IS HERE</main>
 
-        <p className={styles.description}>Get started by</p>
-        <Login />
-
-        <div className={styles.grid}></div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href='http://caristrap.com'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Powered by{' '}
-          <img src='/cLogo.gif' alt='Caristrap Logo' className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+        <footer className={styles.footer}>
+          <a
+            href='http://caristrap.com'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            Powered by{' '}
+            <img
+              src='/cLogo.gif'
+              alt='Caristrap Logo'
+              className={styles.logo}
+            />
+          </a>
+        </footer>
+      </div>
+    </Store>
   );
 }

@@ -1,12 +1,13 @@
 import Head from 'next/head';
 import { useContext } from 'react';
-import { LoggedInContext } from './store';
+import { UserContext } from './store';
 import styles from '../styles/Layout.module.css';
 import MainNav from './main_nav';
 import SideNav from './side_nav';
 import Login from './login';
+
 const Layout = (props) => {
-  const [loggedIn, setLoggedIn] = useContext(LoggedInContext);
+  const [user, setUser] = useContext(UserContext);
 
   /**
    * Log user out of of the session with our app (clears the `auth` cookie)
@@ -25,11 +26,8 @@ const Layout = (props) => {
       <Head>
         <title>CM-App</title>
       </Head>
-
-      {/* If a user is logged in, show our Welcome message and Logout button */}
-      {loggedIn ? (
+      {user !== null ? (
         <>
-          {' '}
           <MainNav />
           <div className={styles.horizontal_area}>
             <SideNav />

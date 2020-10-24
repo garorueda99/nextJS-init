@@ -1,12 +1,15 @@
 import { useRouter } from 'next/router';
 import styles from '../styles/Login.module.css';
 import { useContext } from 'react';
-import { MagicContext, LoggedInContext } from './store';
+import { MagicContext, UserContext } from './store';
+import useAuth from '../hooks/useAuth';
 
 export default function Login() {
   const [magic] = useContext(MagicContext);
-  const [loggedIn, setLoggedIn] = useContext(LoggedInContext);
+  const [user, setUser] = useContext(UserContext);
   const router = useRouter();
+  const { user: userFromBE, loading } = useAuth();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -18,14 +21,14 @@ export default function Login() {
     });
     // Once we have the token from magic,
     // update our own database
-    // console.log('FRONT-DID', did);
     const authRequest = await fetch('/api/user/login', {
       method: 'POST',
       headers: new Headers({ Authorization: `Bearer ${did}` }),
     });
     if (authRequest.ok) {
-      setLoggedIn(true);
-      router.push('/todos');
+      console.log('CHECK HERE=====>', authRequest);
+      setUser(userFromBE.email);
+      router.push('/main');
 
       // We successfully logged in, our API
       // set authorization cookies and now we

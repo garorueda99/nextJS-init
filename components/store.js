@@ -4,48 +4,36 @@ import Layout from './layout';
 
 /* initializing context API values */
 export const MagicContext = createContext();
-export const LoggedInContext = createContext();
+export const UserContext = createContext();
 export const LoadingContext = createContext();
 
 /* this function wraps our entire app within our context APIs so they all have access to their values */
 const Store = ({ children }) => {
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [user, setUser] = useState(null);
+  // const [isLoading, setIsLoading] = useState(true);
   const [magic, setMagic] = useState();
   useEffect(() => {
     (async () => {
-      setIsLoading(true);
-
+      // setIsLoading(true);
       /* We initialize Magic in `useEffect` so it has access to the global `window` object inside the browser */
       let m = new Magic(process.env.NEXT_PUBLIC_MAGIC_PUB_KEY);
       await setMagic(m);
-
-      /* On page refresh, send a request to /api/user to see if there's a valid user session */
-      let res = await fetch('/api/user');
-      let data = await res.json();
-      /* If the user has a valid session with our server, it will return {authorized: true, user: user} */
-      // let loggedIn = data.authorized ? data.user : false;
-
-      /* If db returns {authorized: false}, there is no valid session, so log user out of their session with Magic if it exists */
-      // !loggedIn && magic && magic.user.logout();
-
-      // await setLoggedIn(loggedIn.email);
-      // console.log('DATA===>', data, 'LOG==>', loggedIn);
-      setIsLoading(false);
+      // setIsLoading(false);
     })();
   }, []);
 
   return (
-    // `children` (passed as props in this file) represents the component nested inside <Store /> in `/pages/index.js` and `/pages/login.js`
-    <LoggedInContext.Provider value={[loggedIn, setLoggedIn]}>
-      <MagicContext.Provider value={[magic]}>
-        <LoadingContext.Provider value={[isLoading, setIsLoading]}>
-          <div>
-            <Layout>{children}</Layout>
-          </div>
-        </LoadingContext.Provider>
-      </MagicContext.Provider>
-    </LoggedInContext.Provider>
+    // <LoggedInContext.Provider value={[loggedIn, setLoggedIn]}>
+    <MagicContext.Provider value={[magic]}>
+      <UserContext.Provider value={[user, setUser]}>
+        <div>
+          <Layout>
+            <>{children}</>
+          </Layout>
+        </div>
+        {/* </LoadingContext.Provider> */}
+      </UserContext.Provider>
+    </MagicContext.Provider>
   );
 };
 

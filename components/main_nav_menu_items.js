@@ -2,18 +2,18 @@ import { useContext } from 'react';
 import { BiExit } from 'react-icons/bi';
 import { AiOutlineAlert } from 'react-icons/ai';
 import { AiOutlineMenu } from 'react-icons/ai';
-import { MagicContext, LoggedInContext } from './store';
+import { MagicContext, UserContext } from './store';
 import styles from '../styles/Menu_items.module.css';
 
 export default function menu_items() {
-  const [loggedIn, setLoggedIn] = React.useContext(LoggedInContext);
+  const [user, setUser] = React.useContext(UserContext);
   const [magic] = useContext(MagicContext);
 
   const handleLogout = async () => {
     await fetch(`/api/user/logout`, {
       method: 'GET',
     });
-    setLoggedIn(false);
+    setUser(null);
     await magic.user.logout();
   };
 

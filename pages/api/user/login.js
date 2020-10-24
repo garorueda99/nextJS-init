@@ -1,7 +1,6 @@
 import { Magic } from '@magic-sdk/admin';
 import Iron from '@hapi/iron';
 import CookieService from '../../../lib/cookie';
-
 // console.log('====>', CookieService);
 
 export default async (req, res) => {
