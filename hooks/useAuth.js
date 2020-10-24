@@ -8,7 +8,7 @@ function fetcher(route) {
 }
 
 export default function useAuth() {
-  console.log('Im in user');
+  // console.log('Im in user');
   const { data: user, error, mutate } = useSWR('/api/user', fetcher);
   const loading = user === undefined;
 

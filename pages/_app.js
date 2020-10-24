@@ -3,9 +3,11 @@ import Store from '../components/store';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Store>
-      <Component {...pageProps} />
-    </Store>
+    <React.StrictMode>
+      <Store>
+        <Component {...pageProps} />
+      </Store>
+    </React.StrictMode>
   );
 }
 

@@ -26,7 +26,7 @@ export default function Login() {
       headers: new Headers({ Authorization: `Bearer ${did}` }),
     });
     if (authRequest.ok) {
-      console.log('CHECK HERE=====>', authRequest);
+      // console.log('CHECK HERE=====>', authRequest);
       setUser(userFromBE.email);
       router.push('/main');
 

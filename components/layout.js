@@ -27,13 +27,13 @@ const Layout = (props) => {
         <title>CM-App</title>
       </Head>
       {user !== null ? (
-        <>
+        <div className={styles.mainScreen}>
           <MainNav />
           <div className={styles.horizontal_area}>
             <SideNav />
             {props.children}
           </div>
-        </>
+        </div>
       ) : (
         // Else, show the Login button
         <>

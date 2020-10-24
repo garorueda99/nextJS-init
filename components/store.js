@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect } from 'react';
 import { Magic } from 'magic-sdk';
 import Layout from './layout';
+import { GiMailShirt } from 'react-icons/gi';
 
 /* initializing context API values */
 export const MagicContext = createContext();
@@ -9,7 +10,8 @@ export const LoadingContext = createContext();
 
 /* this function wraps our entire app within our context APIs so they all have access to their values */
 const Store = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState('garo99@gmail.com');
+  // const [user, setUser] = useState(null);
   // const [isLoading, setIsLoading] = useState(true);
   const [magic, setMagic] = useState();
   useEffect(() => {
@@ -27,6 +29,7 @@ const Store = ({ children }) => {
     <MagicContext.Provider value={[magic]}>
       <UserContext.Provider value={[user, setUser]}>
         <div>
+          {/* style={{ border: '4px solid pink' }} */}
           <Layout>
             <>{children}</>
           </Layout>
