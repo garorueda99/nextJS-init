@@ -11,6 +11,7 @@
     "@hapi/iron": "^6.0.0",
     "@magic-sdk/admin": "^1.2.2",
     "magic-sdk": "^2.7.0",
+    "mongoose": "^5.10.10",
     "next": "9.5.5",
     "react": "16.14.0",
     "react-dom": "16.14.0",

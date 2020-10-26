@@ -1,7 +1,6 @@
 import { createContext, useState, useEffect } from 'react';
 import { Magic } from 'magic-sdk';
 import Layout from './layout';
-import { GiMailShirt } from 'react-icons/gi';
 
 /* initializing context API values */
 export const MagicContext = createContext();
