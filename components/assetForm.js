@@ -3,7 +3,7 @@ export default function assetForm() {
   return (
     <>
       <h2>New Asset Form</h2>
-      <form>
+      <form name='asset' method='POST' action='api/assets'>
         <div>
           <label className={styles.label}>Asset Name:</label>
           <input />

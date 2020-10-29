@@ -35,8 +35,9 @@ export default async (req, res) => {
   //   publicAddress: '********************************************',
   //   email: 'garo99@gmail.com'
   // }
-
+  //Saving in mongoDB
   signup(user);
+
   const encrypted_token = await Iron.seal(
     user,
     process.env.ENCRYPTION_SECRET,
