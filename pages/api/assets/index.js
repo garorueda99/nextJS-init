@@ -8,6 +8,6 @@ export default async (req, res) => {
   }
   console.log('BODY:', req.body);
   const result = await db.collection('assets').insertOne(JSON.parse(req.body));
-  console.log('RESULT', result);
+  console.log('ADDED');
   res.json({ result: 'ok' });
 };
